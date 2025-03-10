@@ -1,0 +1,49 @@
+{
+  "name": "store-management",
+  "version": "1.0.0",
+  "description": "Système de gestion de stock pour MDL",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win portable"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/XibalbaM/LLL-Compta-Cafet.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/XibalbaM/LLL-Compta-Cafet/issues"
+  },
+  "homepage": "https://github.com/XibalbaM/LLL-Compta-Cafet#readme",
+  "build": {
+    "appId": "com.store.management",
+    "productName": "Gestion Stock MDL",
+    "win": {
+      "target": "portable",
+      "icon": "icon.ico"
+    },
+    "portable": {
+      "artifactName": "GestionStockMDL.exe"
+    },
+    "files": [
+      "**/*",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^latest_version",
+    "electron-builder": "^latest_version"
+  }
+}

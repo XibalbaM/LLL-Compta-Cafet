@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Système de Gestion de Stock</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Système de Gestion de Stock</h1>
+            <nav>
+                <button class="tab-btn active" data-tab="stock">Gestion des Stocks</button>
+                <button class="tab-btn" data-tab="sales">Caisse Enregistreuse</button>
+                <button class="tab-btn" data-tab="products">Gestion des Produits</button>
+            </nav>
+        </header>
+
+        <main>
+            <section id="stock" class="tab-content active">
+                <h2>Gestion des Stocks</h2>
+                <div class="stock-form">
+                    <select id="product-select" required>
+                        <option value="">Sélectionner un produit</option>
+                    </select>
+                    <input type="number" id="stock-quantity" placeholder="Quantité" min="0" required>
+                    <button id="update-stock">Mettre à jour le stock</button>
+                </div>
+                <div class="stock-list">
+                    <h3>Stock Actuel</h3>
+                    <table id="stock-table">
+                        <thead>
+                            <tr>
+                                <th>Produit</th>
+                                <th>Quantité</th>
+                                <th>Prix MDL</th>
+                                <th>Prix Normal</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section id="sales" class="tab-content">
+                <h2>Caisse Enregistreuse</h2>
+                <div class="sales-grid">
+                    <!-- Products will be dynamically added here -->
+                </div>
+                <div class="cart">
+                    <h3>Panier Actuel</h3>
+                    <table id="cart-table">
+                        <thead>
+                            <tr>
+                                <th>Produit</th>
+                                <th>Prix Unitaire</th>
+                                <th>Quantité</th>
+                                <th>Type de Prix</th>
+                                <th>Total</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <div class="cart-total">
+                        <span>Total : </span>
+                        <span id="cart-total-amount">0,00 €</span>
+                        <button id="complete-sale">Finaliser la vente</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="products" class="tab-content">
+                <h2>Gestion des Produits</h2>
+                <div class="product-form">
+                    <input type="text" id="product-id" placeholder="ID du produit" required>
+                    <input type="text" id="product-name" placeholder="Nom du produit" required>
+                    <input type="number" id="product-price1" placeholder="Prix MDL" step="0.01" min="0" required>
+                    <input type="number" id="product-price2" placeholder="Prix Normal" step="0.01" min="0" required>
+                    <button id="add-product">Ajouter/Modifier Produit</button>
+                </div>
+                <div class="product-list">
+                    <h3>Liste des Produits</h3>
+                    <table id="products-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nom</th>
+                                <th>Prix MDL</th>
+                                <th>Prix Normal</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html> 
